@@ -1,0 +1,59 @@
+.users {
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 40rem;
+  max-height: 70vh;
+  /* overflow: hidden; */
+  /* overflow-y: auto; */
+  position: relative;
+}
+
+.users ul {
+  height: 50vh;
+  list-style: none;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.users > ul::-webkit-scrollbar {
+  width: 6px;
+  background-color: #aaa;
+}
+
+.users > ul::-webkit-scrollbar-thumb {
+  background: #00000098;
+  border-radius: 4px;
+}
+
+.users li {
+  border: 1px solid #ccc;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.title {
+  background: white;
+  width: 100%;
+  /* position: absolute; */
+  /* top: 0;
+  left: 0; */
+  font-family: System-ui;
+  font-weight: 400;
+  padding: 1rem 0;
+  /* padding-bottom: 2rem; */
+}
+
+.user {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 980px) {
+  .users {
+    max-height: 80vh;
+  }
+
+  .users ul {
+    height: 50vh;
+  }
+}

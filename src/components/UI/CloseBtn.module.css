@@ -1,0 +1,16 @@
+.buttonContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 10px;
+  margin: 6px;
+  display: flex;
+  place-items: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.buttonContainer svg {
+  stroke-width: 4px;
+}

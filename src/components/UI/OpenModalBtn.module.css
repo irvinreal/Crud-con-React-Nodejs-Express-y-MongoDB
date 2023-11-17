@@ -1,0 +1,17 @@
+.buttonContainer {
+  background: #16182b;
+  width: fit-content;
+  height: 1.7rem;
+  padding: 0 1rem;
+  color: white;
+  font-family: System-ui;
+  font-size: 1rem;
+  font-weight: 100;
+  border: none;
+  border-radius: 3px;
+  position: absolute;
+  top: 5rem;
+  left: 8rem;
+  cursor: pointer;
+  transition: 0.3s ease all;
+}
