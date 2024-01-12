@@ -5,6 +5,7 @@
   display: flex;
   padding: 0 2rem;
   padding-top: 5rem;
+  margin: 0 auto;
 }
 
 .add-user-section {
@@ -19,6 +20,8 @@
 
 @media (max-width: 980px) {
   .container {
+    width: 100%;
+
     flex-direction: column;
   }
 
@@ -28,5 +31,11 @@
     top: 6rem;
     left: 0;
     /* display: none; */
+  }
+}
+
+@media (width >= 1120px) {
+  .container {
+    width: 90%;
   }
 }

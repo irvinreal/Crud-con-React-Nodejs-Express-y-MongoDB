@@ -7,7 +7,7 @@ function OpenModalBtn({ onModalIsOpen }) {
   }
   return (
     <button onClick={handleOpenModal} className={classes.buttonContainer}>
-      Add user
+      + Add user
     </button>
   )
 }

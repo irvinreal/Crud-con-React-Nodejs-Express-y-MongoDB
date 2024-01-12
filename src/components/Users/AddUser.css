@@ -1,0 +1,28 @@
+/* .cardForm {
+  background: red;
+} */
+
+@media (width <= 979px) {
+  .cardForm {
+    margin: 0 1rem;
+  }
+  .mobile {
+    display: block;
+  }
+  .off {
+    display: none;
+  }
+  .openModalBtn.on {
+    display: block;
+  }
+}
+
+@media (width >= 980px) {
+  .openModalBtn {
+    display: none !important;
+  }
+
+  .on {
+    display: block;
+  }
+}

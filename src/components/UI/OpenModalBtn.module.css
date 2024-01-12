@@ -1,7 +1,7 @@
 .buttonContainer {
-  background: #16182b;
+  background: #1B1B22;
   width: fit-content;
-  height: 1.7rem;
+  height: 1.8rem;
   padding: 0 1rem;
   color: white;
   font-family: System-ui;
@@ -10,8 +10,16 @@
   border: none;
   border-radius: 3px;
   position: absolute;
-  top: 5rem;
+  top: 0;
   left: 8rem;
   cursor: pointer;
   transition: 0.3s ease all;
+}
+
+@media (width <= 500px) {
+  .buttonContainer {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
 }

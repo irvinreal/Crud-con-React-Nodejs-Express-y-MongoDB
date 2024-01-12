@@ -1,0 +1,84 @@
+.container {
+  height: 30px;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  margin: 0.5rem 0;
+}
+/* Username */
+.usernameContainer {
+  /* background: red; */
+  width: 60%;
+  height: 100%;
+  padding: 0 1rem 0 2rem;
+  display: flex;
+  align-items: center;
+  color: #4183b9;
+
+  font-family: System-ui;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Age */
+.ageContainer {
+  /* background: yellow; */
+  width: 20%;
+  display: flex;
+  align-items: center;
+  color: #4183b9;
+  font-family: System-ui;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Buttons */
+.buttonContainer {
+  /* background: red; */
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonContainer > button {
+  height: 25px;
+  cursor: pointer;
+  background: #b8b8b8;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  transition: 0.3s ease all;
+}
+
+.buttonContainer > button:hover {
+  background: #424242;
+  color: white;
+}
+
+.buttonContainer > button:first-child {
+  margin-right: 8px;
+}
+
+.buttonContainer > button {
+  display: none;
+}
+.container:hover .buttonContainer > button {
+  display: block;
+}
+
+.editUser {
+  display: block !important;
+}
+
+.input {
+  width: 100px;
+  text-align: center;
+}
+
+.inputAge {
+  width: 50px;
+  text-align: center;
+}

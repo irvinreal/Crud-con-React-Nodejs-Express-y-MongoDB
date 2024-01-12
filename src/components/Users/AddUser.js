@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Button from '../UI/Button'
 import Card from '../UI/Card'
 import CloseBtn from '../UI/CloseBtn'
 import ErrorModal from '../UI/ErrorModal'
 import OpenModalBtn from '../UI/OpenModalBtn'
+import './AddUser.css'
 import classes from './AddUser.module.css'
 
 function AddUser(props) {
@@ -11,6 +12,8 @@ function AddUser(props) {
   const [enteredUsername, setEnteredUsername] = useState('')
   const [enteredAge, setEnteredAge] = useState('')
   const [error, setError] = useState()
+
+  const input_username = useRef(null)
 
   const addUserHandler = (event) => {
     event.preventDefault()
@@ -34,6 +37,7 @@ function AddUser(props) {
 
     setEnteredUsername('')
     setEnteredAge('')
+    input_username.current.focus()
   }
 
   const usernameChangeHandler = (event) => {
@@ -58,12 +62,13 @@ function AddUser(props) {
         />
       )}
 
-      {modalIsOpen ? (
-        <Card className={classes.input}>
+      <div className={`cardForm ${modalIsOpen ? 'on' : 'off'}`}>
+        <Card className={`${classes.cardForm}`}>
           <CloseBtn onModalIsOpen={setModalIsOpen} />
           <form onSubmit={addUserHandler}>
             <label htmlFor='username'>Username</label>
             <input
+              ref={input_username}
               value={enteredUsername}
               id='username'
               type='text'
@@ -78,12 +83,14 @@ function AddUser(props) {
               placeholder='30'
               onChange={ageChangeHandler}
             />
-            <Button type='submit'>Add User</Button>
+            <Button type='submit'>+ Add User</Button>
           </form>
         </Card>
-      ) : (
+      </div>
+
+      <div className={`openModalBtn  ${modalIsOpen ? 'off' : 'on'}`}>
         <OpenModalBtn onModalIsOpen={setModalIsOpen} />
-      )}
+      </div>
     </div>
   )
 }

@@ -1,8 +1,12 @@
+:root {
+  --dark: #181818;
+  --dark-blue: #0b061f;
+}
 .button {
   min-width: 12rem;
   font: inherit;
-  border: 2px solid #4f005f;
-  background-color: #4f005f;
+  border: 2px solid var(--dark);
+  background-color: var(--dark);
   color: white;
   padding: 0.25rem 1rem;
   border-radius: 3px;
@@ -13,8 +17,8 @@
 
 .button:hover,
 .button:active {
-  background-color: #741188;
-  border-color: #430379;
+  background-color: var(--dark-blue);
+  border-color: var(--dark-blue);
   border-radius: 5px;
   border-bottom-left-radius: 13px;
   border-top-right-radius: 8px;

@@ -9,6 +9,10 @@ const userSchema = new mongoose.Schema({
   age: {
     type: Number,
     required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 })
 

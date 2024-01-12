@@ -21,14 +21,8 @@
 }
 
 .users > ul::-webkit-scrollbar-thumb {
-  background: #00000098;
+  background: #000000af;
   border-radius: 4px;
-}
-
-.users li {
-  border: 1px solid #ccc;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
 }
 
 .title {
@@ -40,17 +34,14 @@
   font-family: System-ui;
   font-weight: 400;
   padding: 1rem 0;
+  color: #1999D4;
   /* padding-bottom: 2rem; */
-}
-
-.user {
-  display: flex;
-  justify-content: space-around;
 }
 
 @media (max-width: 980px) {
   .users {
-    max-height: 80vh;
+    max-height: 85vh;
+    width: 100%;
   }
 
   .users ul {
