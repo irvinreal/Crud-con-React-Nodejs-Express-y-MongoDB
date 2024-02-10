@@ -1,38 +1,38 @@
-import { useEffect, useState } from 'react'
-import Navbar from '../components/UI/Navbar'
-import AddUser from '../components/Users/AddUser'
-import UsersList from '../components/Users/UsersList'
-import classes from './PageUsers.module.css'
+import { useEffect, useState } from 'react';
+import Navbar from '../components/UI/Navbar';
+import AddUser from '../components/Users/AddUser';
+import UsersList from '../components/Users/UsersList';
+import classes from './PageUsers.module.css';
 
-const URL_USERS_LIST = 'http://localhost:4559/api/users'
-const URL_REGISTER = 'http://localhost:4559/api/register'
-const URL_DELETE_USER = 'http://localhost:4559/api/delete-user'
-const URL_UPDATE_USER = 'http://localhost:4559/api/update-user'
+const URL_USERS_LIST = 'http://localhost:4559/api/users'; // method: 'GET'
+const URL_REGISTER = 'http://localhost:4559/api/register';
+const URL_DELETE_USER = 'http://localhost:4559/api/delete-user';
+const URL_UPDATE_USER = 'http://localhost:4559/api/update-user';
 
 function Users() {
-  const [usersList, setUsersList] = useState([])
+  const [usersList, setUsersList] = useState([]);
   // const [editUser, setEditUser] = useState(false)
 
   // Cargar los usuarios desde la base de datos al renderizar el componente
   useEffect(() => {
     fetch(URL_USERS_LIST, { method: 'GET' })
       .then((res) => {
-        return res.json()
+        return res.json();
       })
       .then((users) => {
-        console.log(users)
-        return setUsersList(users.users)
+        console.log(users);
+        if (users) return setUsersList(users.users);
       })
       .catch((error) => {
-        console.log('Error: ', error)
-      })
+        console.log('Error: ', error);
+      });
 
     // console.log('usersList', usersList)
     // console.log('usersListJson', usersListJson)
-  }, [])
+  }, []);
 
   const addUserHandler = (uName, uAge) => {
-    const data = { username: uName, age: uAge }
+    const data = { username: uName, age: uAge };
 
     // Mandar a la base de datos cuando se enviar la información del formulario ->
     fetch(URL_REGISTER, {
@@ -43,9 +43,8 @@ function Users() {
       }
     })
       .then((res) => res.json())
-      .catch((error) => console.log('Errors: ', error))
       .then((response) => {
-        console.log('Success!: ', response)
+        console.log('Success!: ', response);
         setUsersList((prevUsersList) => {
           return [
             ...prevUsersList,
@@ -54,16 +53,17 @@ function Users() {
               age: response.newUser.age,
               id: response.newUser._id
             }
-          ]
-        })
+          ];
+        });
       })
-  }
+      .catch((error) => console.log('Errors: ', error));
+  };
 
   const deleteUserHandler = (userId) => {
     const userToDelete = {
       id_userToDelete: userId
-    }
-    console.log('delete..', userToDelete)
+    };
+    console.log('delete..', userToDelete);
     fetch(URL_DELETE_USER, {
       method: 'DELETE',
       body: JSON.stringify(userToDelete),
@@ -74,14 +74,14 @@ function Users() {
       .then((res) => res.json())
       .catch((error) => console.log('Errors: ', error))
       .then((response) => {
-        console.log('Success!: ', response)
+        console.log('Success!: ', response);
         setUsersList((prevUsersList) => {
           return prevUsersList.filter(
             (user) => user._id !== response.userToDelete.id_userToDelete
-          )
-        })
-      })
-  }
+          );
+        });
+      });
+  };
 
   // const editUserHandler = () => {
   //   setEditUser(true)
@@ -91,7 +91,7 @@ function Users() {
     const userToUpdate = {
       id_userToEdit: userId,
       ...data
-    }
+    };
     // console.log(userToUpdate)
 
     fetch(URL_UPDATE_USER, {
@@ -102,7 +102,7 @@ function Users() {
       }
     })
       .then((res) => {
-        return res.json()
+        return res.json();
       })
       .then((userUpdated) => {
         // console.log(userUpdated)
@@ -110,10 +110,10 @@ function Users() {
           return [
             userUpdated.user,
             ...prevUsersList.filter((user) => user._id !== userUpdated.user._id)
-          ]
-        })
-      })
-  }
+          ];
+        });
+      });
+  };
 
   return (
     <section className={classes.container}>
@@ -134,7 +134,7 @@ function Users() {
         )}
       </div>
     </section>
-  )
+  );
 }
 
-export default Users
+export default Users;
