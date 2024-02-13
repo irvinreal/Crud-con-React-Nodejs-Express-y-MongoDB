@@ -4,10 +4,10 @@ import AddUser from '../components/Users/AddUser';
 import UsersList from '../components/Users/UsersList';
 import classes from './PageUsers.module.css';
 
-const URL_USERS_LIST = 'http://localhost:4559/api/users'; // method: 'GET'
-const URL_REGISTER = 'http://localhost:4559/api/register';
-const URL_DELETE_USER = 'http://localhost:4559/api/delete-user';
-const URL_UPDATE_USER = 'http://localhost:4559/api/update-user';
+const URL_USERS_LIST = 'https://crud-u3vb.onrender.com/api/users'; // method: 'GET'
+const URL_REGISTER = 'https://crud-u3vb.onrender.com/api/register';
+const URL_DELETE_USER = 'https://crud-u3vb.onrender.com/api/delete-user';
+const URL_UPDATE_USER = 'https://crud-u3vb.onrender.com/api/update-user';
 
 function Users() {
   const [usersList, setUsersList] = useState([]);
